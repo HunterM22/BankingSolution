@@ -1,16 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BankingDomain
 {
-    class BankAccount
+    public class BankAccount
     {
+        private decimal _balance = 5000; 
+
         public decimal GetBalance()
         {
-            return 5000;        
+            return _balance;
+        }
+
+        public void Deposit(decimal amountToDeposit)
+        {
+            _balance += amountToDeposit;
+        }
+
+        public void Withdraw(decimal amountToWithdraw)
+        {
+            _balance -= amountToWithdraw;
         }
     }
 }
