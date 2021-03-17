@@ -11,12 +11,21 @@ namespace BankingTests
 
     public class BankAccountTests
     {
+        private BankAccount account;
+        private decimal balance;
+
+
+        public BankAccountTests()
+        {
+            account= new BankAccount();
+            balance = account.GetBalance();
+
+        }
+
         [Fact]
         public void NewAccountsHaveCorrectBalance()
         {
-            var account = new BankAccount();
-
-            decimal balance = account.GetBalance();
+      
 
             Assert.Equal(5000M, balance);
         
@@ -25,15 +34,13 @@ namespace BankingTests
         public void DepositsIncreaseTheBalance()
         {
             //Given
-            var account = new BankAccount();
-            var openingBalance = account.GetBalance();
             var amountToDeposit = 42M;
 
             //When
             account.Deposit(amountToDeposit);
 
             //Then 
-            Assert.Equal(openingBalance + amountToDeposit, account.GetBalance());            
+            Assert.Equal(balance + amountToDeposit, account.GetBalance());            
         
         }
 

@@ -4,7 +4,7 @@ namespace BankingDomain
 {
     public class BankAccount
     {
-        private decimal _balance = 5000; 
+        private decimal _balance = 5000; // class variable field
 
         public decimal GetBalance()
         {
